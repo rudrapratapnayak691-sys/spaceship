@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050914">
+  <meta name="description" content="Cosmic Space Civilization — an educational spacecraft and life-support simulation.">
+  <title>Cosmic Space Civilization | Mission Control</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loader" class="loader">
+    <div class="loader-orbit"><span></span><i></i></div>
+    <p class="eyebrow">CSC / DEEP SPACE INITIATIVE</p>
+    <h2>INITIALIZING MISSION SYSTEMS</h2>
+    <div class="loader-track"><span id="loaderBar"></span></div>
+    <small id="loaderText">CALIBRATING NAVIGATION · 00%</small>
+  </div>
+
+  <canvas id="starfield" aria-hidden="true"></canvas>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Cosmic Space Civilization home">
+      <span class="brand-mark"><i data-lucide="orbit"></i></span>
+      <span><b>CSC</b><small>SPACE CIVILIZATION</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation"><i data-lucide="menu"></i></button>
+    <nav id="mainNav">
+      <a href="#home" class="nav-link active">HOME</a>
+      <a href="#spacecraft" class="nav-link">SPACECRAFT</a>
+      <a href="#life-support" class="nav-link">LIFE SUPPORT</a>
+      <a href="#systems" class="nav-link">SYSTEMS</a>
+      <a href="#interior" class="nav-link">INTERIOR</a>
+      <a href="#cosmic-core" class="nav-link core-link">COSMIC CORE <span class="live-dot"></span></a>
+    </nav>
+    <button class="sound-btn" id="soundToggle" title="Toggle interface sounds"><i data-lucide="volume-2"></i><span>SOUND</span></button>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-grid"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="live-dot"></span> HUMANITY'S NEXT FRONTIER / EST. 2089</p>
+        <h1>COSMIC SPACE<br><span>CIVILIZATION</span></h1>
+        <p class="hero-subtitle">BUILDING HUMANITY <em>BEYOND EARTH</em></p>
+        <p class="hero-description">A self-sustaining habitat concept engineered for the long journey. Explore the spacecraft, understand its life-support ecosystem, and take command of a simulated mission.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#spacecraft"><span>EXPLORE THE VESSEL</span><i data-lucide="arrow-up-right"></i></a>
+          <button class="btn btn-ghost" id="enterMission"><i data-lucide="play"></i> ENTER MISSION</button>
+        </div>
+        <div class="hero-meta"><span><b>01</b> / ORBITAL HABITAT</span><span>SIMULATION // CSC-01</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="planet planet-back"></div><div class="planet planet-front"></div>
+        <div class="ship-stage">
+          <div class="ship-aura"></div>
+          <div class="ship-model" id="heroShip">
+            <div class="ship-nose"></div><div class="ship-body"></div><div class="ship-wing wing-left"></div><div class="ship-wing wing-right"></div>
+            <div class="ship-ring"></div><div class="ship-engine engine-one"></div><div class="ship-engine engine-two"></div><div class="ship-engine engine-three"></div>
+            <div class="ship-window"></div>
+          </div>
+        </div>
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="hud-tag tag-top"><small>VESSEL STATUS</small><b><span class="live-dot"></span> IN ORBIT</b></div>
+        <div class="hud-tag tag-bottom"><small>MISSION DISTANCE</small><b>1.42 AU <span>↗</span></b></div>
+        <div class="coordinate">14° 32' 08" N<br>72° 11' 42" E</div>
+      </div>
+      <a class="scroll-cue" href="#spacecraft"><span></span> SCROLL TO EXPLORE</a>
+    </section>
+
+    <section class="section intro-strip">
+      <div class="strip-item"><small>MISSION DESIGNATION</small><b>CSC-01 / ODYSSEY</b></div>
+      <div class="strip-item"><small>OPERATIONAL RANGE</small><b>DEEP SPACE</b></div>
+      <div class="strip-item"><small>HABITAT CLASS</small><b>SELF-SUSTAINING</b></div>
+      <div class="strip-item"><small>SIMULATION MODE</small><b><span class="live-dot"></span> ACTIVE</b></div>
+    </section>
+
+    <section class="section content-section" id="spacecraft">
+      <div class="section-heading reveal"><div><p class="eyebrow">01 / THE VESSEL</p><h2>BUILT FOR THE <span>UNKNOWN.</span></h2></div><p>A modular deep-space habitat designed around one principle: every resource matters, and every system works together.</p></div>
+      <div class="craft-layout">
+        <div class="craft-visual panel reveal">
+          <div class="panel-top"><span>CSC-01 / EXTERNAL SCHEMATIC</span><span class="tiny-status">● SCHEMATIC VIEW</span></div>
+          <div class="schematic-ship">
+            <div class="schematic-core"></div><div class="schematic-module m1"></div><div class="schematic-module m2"></div><div class="schematic-module m3"></div><div class="schematic-wing sw1"></div><div class="schematic-wing sw2"></div>
+            <span class="callout c1">HABITAT MODULE</span><span class="callout c2">POWER ARRAY</span><span class="callout c3">PROPULSION</span>
+          </div>
+          <div class="panel-bottom"><span>FIG 01. EXPLORATION VESSEL</span><span>NOT TO SCALE</span></div>
+        </div>
+        <div class="craft-info">
+          <div class="craft-title reveal"><span class="number">CSC / 001</span><h3>ODYSSEY<br>EXPLORATION VESSEL</h3><p>A conceptual orbital habitat combining crew living space, regenerative life support, and modular research facilities.</p></div>
+          <div class="spec-grid">
+            <div class="spec-card reveal"><i data-lucide="users"></i><small>CREW CAPACITY</small><b>06 <em>PERSONS</em></b></div>
+            <div class="spec-card reveal"><i data-lucide="calendar-days"></i><small>MISSION DURATION</small><b>24 <em>MONTHS</em></b></div>
+            <div class="spec-card reveal"><i data-lucide="zap"></i><small>POWER GENERATION</small><b>120 <em>kW</em></b></div>
+            <div class="spec-card reveal"><i data-lucide="droplets"></i><small>WATER STORAGE</small><b>8,000 <em>L</em></b></div>
+            <div class="spec-card reveal"><i data-lucide="wind"></i><small>O₂ GENERATION</small><b>6.0 <em>kg/day</em></b></div>
+            <div class="spec-card reveal"><i data-lucide="thermometer"></i><small>CABIN TARGET</small><b>22 <em>°C</em></b></div>
+          </div>
+        </div>
+      </div>
+      <div class="habitat-note panel reveal"><i data-lucide="info"></i><p><b>HABITAT PHILOSOPHY</b> The vessel uses a closed-loop resource strategy: recover water, regenerate breathable air, grow a portion of food, and move heat away from crew spaces. Figures are illustrative design targets for this educational simulation.</p></div>
+    </section>
+
+    <section class="section content-section" id="life-support">
+      <div class="section-heading reveal"><div><p class="eyebrow">02 / LIFE SUPPORT ECOSYSTEM</p><h2>A LIVING, <span>BREATHING</span> VESSEL.</h2></div><p>Four interconnected systems help maintain a stable habitat. Select a subsystem to explore its process.</p></div>
+      <div class="life-grid">
+        <article class="life-card hydro-card reveal" data-system-card="hydro">
+          <div class="life-card-head"><span class="system-icon"><i data-lucide="sprout"></i></span><span class="card-index">SYS / 01</span></div>
+          <p class="eyebrow">FOOD + REGENERATION</p><h3>HYDROPONIC<br>GROWTH</h3>
+          <p>Plants grow without soil as nutrient-rich water circulates around their roots. Controlled LED lighting supports growth inside the habitat.</p>
+          <div class="mini-flow"><span>WATER</span><i></i><span>NUTRIENTS</span><i></i><span>FOOD</span></div>
+          <button class="text-link system-jump" data-target="hydro">EXPLORE SYSTEM <i data-lucide="arrow-up-right"></i></button>
+        </article>
+        <article class="life-card oxygen-card reveal" data-system-card="oxygen">
+          <div class="life-card-head"><span class="system-icon"><i data-lucide="wind"></i></span><span class="card-index">SYS / 02</span></div>
+          <p class="eyebrow">ATMOSPHERE + SAFETY</p><h3>OXYGEN<br>GENERATION</h3>
+          <p>Electrolysis splits purified water into oxygen and hydrogen. Oxygen is conditioned and distributed; carbon dioxide is removed from cabin air.</p>
+          <div class="mini-flow"><span>H₂O</span><i></i><span>ELECTROLYSIS</span><i></i><span>O₂</span></div>
+          <button class="text-link system-jump" data-target="oxygen">EXPLORE SYSTEM <i data-lucide="arrow-up-right"></i></button>
+        </article>
+        <article class="life-card water-card reveal" data-system-card="water">
+          <div class="life-card-head"><span class="system-icon"><i data-lucide="droplet"></i></span><span class="card-index">SYS / 03</span></div>
+          <p class="eyebrow">RESOURCE RECOVERY</p><h3>WATER<br>MANAGEMENT</h3>
+          <p>Filtration and purification recover water from wastewater and cabin humidity, reducing the amount that must be stored or resupplied.</p>
+          <div class="mini-flow"><span>RECOVERY</span><i></i><span>FILTER</span><i></i><span>REUSE</span></div>
+          <button class="text-link system-jump" data-target="water">EXPLORE SYSTEM <i data-lucide="arrow-up-right"></i></button>
+        </article>
+        <article class="life-card thermal-card reveal" data-system-card="thermal">
+          <div class="life-card-head"><span class="system-icon"><i data-lucide="thermometer-sun"></i></span><span class="card-index">SYS / 04</span></div>
+          <p class="eyebrow">HABITAT COMFORT</p><h3>THERMAL<br>CONTROL</h3>
+          <p>Insulation, heat exchangers, heaters, and external radiators work together to keep cabin temperatures within a comfortable operating range.</p>
+          <div class="mini-flow"><span>SENSORS</span><i></i><span>REGULATE</span><i></i><span>RADIATE</span></div>
+          <button class="text-link system-jump" data-target="thermal">EXPLORE SYSTEM <i data-lucide="arrow-up-right"></i></button>
+        </article>
+      </div>
+      <div class="science-panel panel reveal">
+        <div class="science-copy"><p class="eyebrow">SYSTEM DEEP DIVE</p><h3 id="scienceTitle">CLOSED-LOOP<br><span>HYDROPONICS</span></h3><p id="scienceText">A nutrient solution is delivered directly to plant roots. Sensors monitor water level, nutrient concentration, and lighting schedules. Plant photosynthesis can contribute oxygen, but the habitat still requires engineered atmosphere management.</p><div class="science-tags" id="scienceTags"><span>SOIL-FREE CULTIVATION</span><span>LED PHOTOPERIOD</span><span>NUTRIENT LOOP</span></div></div>
+        <div class="science-visual" id="scienceVisual"><div class="grow-tank"><div class="plant-stem"></div><div class="plant-leaf l1"></div><div class="plant-leaf l2"></div><div class="plant-leaf l3"></div><div class="waterline"></div></div><div class="science-orbit so1"></div><div class="science-orbit so2"></div><span class="science-label sl1">NUTRIENT FLOW</span><span class="science-label sl2">LED ARRAY</span></div>
+      </div>
+    </section>
+
+    <section class="section content-section" id="systems">
+      <div class="section-heading reveal"><div><p class="eyebrow">03 / SYSTEM ARCHITECTURE</p><h2>ONE HABITAT. <span>FOUR LOOPS.</span></h2></div><p>Follow the resource pathways. These simplified diagrams explain how life-support functions connect.</p></div>
+      <div class="flow-board panel reveal">
+        <div class="flow-tabs" role="tablist"><button class="flow-tab active" data-flow="water">WATER LOOP</button><button class="flow-tab" data-flow="oxygen">OXYGEN LOOP</button><button class="flow-tab" data-flow="air">AIR REVITALIZATION</button><button class="flow-tab" data-flow="thermal">THERMAL LOOP</button></div>
+        <div class="flow-stage" id="flowStage">
+          <div class="flow-node"><i data-lucide="droplets"></i><b>WATER RECOVERY</b><small>Filter + purify</small></div><span class="flow-arrow">→</span><div class="flow-node"><i data-lucide="sprout"></i><b>HYDROPONICS</b><small>Nutrient delivery</small></div><span class="flow-arrow">→</span><div class="flow-node"><i data-lucide="salad"></i><b>FOOD PRODUCTION</b><small>Harvest + consume</small></div>
+        </div>
+        <p class="flow-caption" id="flowCaption">Recovered water is purified and routed to the plant-growth loop. Some water is returned for reuse, while plants provide a supplemental source of fresh food.</p>
+      </div>
+      <div class="system-explain-grid">
+        <div class="explain-card reveal"><span>01</span><b>WATER ELECTROLYSIS</b><p>Electrical energy drives a process that separates water into hydrogen and oxygen. Hydrogen requires safe handling and storage or further processing.</p></div>
+        <div class="explain-card reveal"><span>02</span><b>CO₂ REMOVAL</b><p>Air revitalization equipment captures carbon dioxide from cabin air to help maintain a suitable atmosphere for the crew.</p></div>
+        <div class="explain-card reveal"><span>03</span><b>HEAT REJECTION</b><p>Heat exchangers collect excess heat and transfer it to coolant loops. Radiators reject that heat to the surrounding environment.</p></div>
+      </div>
+    </section>
+
+    <section class="section content-section" id="interior">
+      <div class="section-heading reveal"><div><p class="eyebrow">04 / HABITAT EXPLORATION</p><h2>INSIDE THE <span>ODYSSEY.</span></h2></div><p>Select a compartment to explore its purpose and the systems that keep it operational.</p></div>
+      <div class="interior-layout">
+        <div class="room-list panel reveal" id="roomList">
+          <button class="room-btn active" data-room="command"><span>01</span><i data-lucide="panels-top-left"></i> COMMAND CENTRE <i data-lucide="chevron-right"></i></button>
+          <button class="room-btn" data-room="quarters"><span>02</span><i data-lucide="bed-double"></i> CREW QUARTERS <i data-lucide="chevron-right"></i></button>
+          <button class="room-btn" data-room="greenhouse"><span>03</span><i data-lucide="sprout"></i> HYDROPONIC BAY <i data-lucide="chevron-right"></i></button>
+          <button class="room-btn" data-room="oxygen"><span>04</span><i data-lucide="wind"></i> OXYGEN CHAMBER <i data-lucide="chevron-right"></i></button>
+          <button class="room-btn" data-room="water"><span>05</span><i data-lucide="droplet"></i> WATER LAB <i data-lucide="chevron-right"></i></button>
+          <button class="room-btn" data-room="thermal"><span>06</span><i data-lucide="thermometer"></i> THERMAL BAY <i data-lucide="chevron-right"></i></button>
+          <button class="room-btn" data-room="power"><span>07</span><i data-lucide="battery-charging"></i> POWER STORAGE <i data-lucide="chevron-right"></i></button>
+        </div>
+        <div class="room-display panel reveal">
+          <div class="room-art" id="roomArt"><div class="room-grid"></div><div class="room-object"><div class="room-object-core"></div><div class="room-object-ring"></div></div><span class="room-art-code">CSC / INTERIOR SIMULATION</span></div>
+          <div class="room-details"><p class="eyebrow" id="roomNumber">COMPARTMENT / 01</p><h3 id="roomTitle">COMMAND CENTRE</h3><p id="roomDescription">The mission nerve centre. Crew monitor navigation, habitat conditions, communications, and subsystem status from a unified operations console.</p><div class="room-chips" id="roomChips"><span>FLIGHT OPS</span><span>MISSION DATA</span><span>CREW MONITORING</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section content-section core-section" id="cosmic-core">
+      <div class="section-heading reveal"><div><p class="eyebrow"><span class="live-dot"></span> 05 / MISSION CONTROL</p><h2>COSMIC <span>CORE.</span></h2></div><p>A hands-on educational simulation. Toggle subsystems, run the startup sequence, and observe how control states affect the habitat dashboard.</p></div>
+      <div class="core-shell">
+        <div class="core-header"><div><span class="core-emblem"><i data-lucide="orbit"></i></span><span><b>COSMIC CORE</b><small>SPACESHIP MANAGEMENT SYSTEM / CSC-01</small></span></div><div class="core-status"><span class="live-dot"></span><span id="coreState">STANDBY</span><small>SIMULATION // LOCAL</small></div></div>
+        <div class="core-toolbar"><div class="telemetry"><span>MISSION ELAPSED <b id="missionClock">00:00:00</b></span><span>LINK <b class="good-text">STABLE</b></span><span>DATA STREAM <b class="good-text">LIVE</b></span></div><div class="core-actions"><button class="small-btn start-btn" id="mainStart"><i data-lucide="power"></i> MAIN SYSTEM START</button><button class="small-btn danger-btn" id="masterShutdown"><i data-lucide="octagon-pause"></i> MASTER SHUTDOWN</button><button class="small-btn" id="systemReset"><i data-lucide="refresh-ccw"></i> RESET</button></div></div>
+        <div class="core-main-grid">
+          <div class="core-left">
+            <div class="core-ship-panel">
+              <div class="panel-top"><span>HOLOGRAPHIC VESSEL / LIVE VIEW</span><span class="tiny-status" id="vesselStatus">POWER OFFLINE</span></div>
+              <div id="core3d" class="core3d"><div class="core-fallback-ship"><div class="fallback-body"></div><div class="fallback-wing fw1"></div><div class="fallback-wing fw2"></div><div class="fallback-glow"></div></div><div class="core-radar radar1"></div><div class="core-radar radar2"></div><div class="core-crosshair"></div><div class="core-coord">X 008.21 / Y 014.72 / Z 002.08</div></div>
+              <div class="core-vitals"><div><small>CORE OUTPUT</small><b id="coreOutput">0 <em>kW</em></b></div><div><small>ENERGY DRAW</small><b id="energyDraw">0 <em>kW</em></b></div><div><small>BATTERY</small><b id="batteryText">86<em>%</em></b></div></div>
+            </div>
+            <div class="dashboard-panel panel">
+              <div class="panel-heading"><div><p class="eyebrow">LIVE TELEMETRY</p><h3>MISSION DASHBOARD</h3></div><span class="data-live"><i></i> LIVE DATA</span></div>
+              <div class="gauge-grid">
+                <div class="gauge-card" data-gauge="oxygen"><div class="gauge" id="gaugeOxygen"><div class="gauge-inner"><b id="gaugeOxygenValue">98</b><small>% O₂</small></div></div><span>OXYGEN RESERVE</span></div>
+                <div class="gauge-card" data-gauge="water"><div class="gauge" id="gaugeWater"><div class="gauge-inner"><b id="gaugeWaterValue">82</b><small>% H₂O</small></div></div><span>WATER RESERVE</span></div>
+                <div class="gauge-card" data-gauge="battery"><div class="gauge" id="gaugeBattery"><div class="gauge-inner"><b id="gaugeBatteryValue">86</b><small>% PWR</small></div></div><span>BATTERY LEVEL</span></div>
+                <div class="gauge-card" data-gauge="air"><div class="gauge" id="gaugeAir"><div class="gauge-inner"><b id="gaugeAirValue">96</b><small>% AQI</small></div></div><span>AIR QUALITY</span></div>
+              </div>
+              <div class="metric-row"><div><small>CABIN TEMPERATURE</small><b id="dashTemp">22.0 °C</b></div><div><small>CO₂ LEVEL</small><b id="dashCo2">0.08 %</b></div><div><small>HYDROPONIC HEALTH</small><b id="dashHydro">100 %</b></div><div><small>POWER CONSUMPTION</small><b id="dashPower">0 kW</b></div></div>
+              <div class="health-line"><span>OVERALL SPACECRAFT HEALTH</span><b id="healthText">100% / NOMINAL</b><div class="health-track"><i id="healthBar"></i></div></div>
+            </div>
+          </div>
+          <div class="core-right">
+            <div class="control-panel panel">
+              <div class="panel-heading"><div><p class="eyebrow">SUBSYSTEM MANAGEMENT</p><h3>CONTROL MATRIX</h3></div><span class="matrix-code">SYS. 01—06</span></div>
+              <div class="control-group" data-control="power">
+                <div class="control-head"><span class="control-icon power-icon"><i data-lucide="zap"></i></span><div><b>MAIN POWER</b><small>Generation + distribution</small></div><span class="state-pill" id="state-power">OFFLINE</span></div>
+                <div class="control-content"><div class="control-stats"><span>GENERATION <b id="powerGeneration">0 kW</b></span><span>CONSUMPTION <b id="powerConsumption">0 kW</b></span></div><div class="micro-track"><i id="powerTrack"></i></div><button class="toggle-btn" data-toggle="power" aria-pressed="false"><span></span> ACTIVATE POWER</button></div>
+              </div>
+              <div class="control-group" data-control="oxygen">
+                <div class="control-head"><span class="control-icon oxygen-icon"><i data-lucide="wind"></i></span><div><b>OXYGEN SYSTEM</b><small>Generation + circulation</small></div><span class="state-pill" id="state-oxygen">OFFLINE</span></div>
+                <div class="control-content"><div class="control-stats"><span>RESERVE <b id="oxygenReserve">98%</b></span><span>CO₂ <b id="oxygenCo2">0.08%</b></span></div><div class="sub-toggle-row"><label><input type="checkbox" data-toggle="oxygenGen"> <span>GENERATION</span></label><label><input type="checkbox" data-toggle="oxygenCirculation"> <span>CIRCULATION</span></label></div></div>
+              </div>
+              <div class="control-group" data-control="hydro">
+                <div class="control-head"><span class="control-icon hydro-icon"><i data-lucide="sprout"></i></span><div><b>HYDROPONIC BAY</b><small>Growth + nutrient circulation</small></div><span class="state-pill" id="state-hydro">OFFLINE</span></div>
+                <div class="control-content"><div class="control-stats"><span>PLANT HEALTH <b id="plantHealth">100%</b></span><span>WATER USE <b id="plantWater">12 L/h</b></span></div><div class="sub-toggle-row"><label><input type="checkbox" data-toggle="hydroLights"> <span>GROW LIGHTS</span></label><label><input type="checkbox" data-toggle="hydroPump"> <span>NUTRIENT PUMP</span></label></div><button class="toggle-btn compact" data-toggle="hydro" aria-pressed="false"><span></span> ACTIVATE HYDROPONICS</button></div>
+              </div>
+              <div class="control-group" data-control="water">
+                <div class="control-head"><span class="control-icon water-icon"><i data-lucide="droplet"></i></span><div><b>WATER MANAGEMENT</b><small>Purification + recycling</small></div><span class="state-pill" id="state-water">OFFLINE</span></div>
+                <div class="control-content"><div class="control-stats"><span>RESERVE <b id="waterReserve">82%</b></span><span>RECOVERY <b id="waterRecovery">0 L/h</b></span></div><div class="sub-toggle-row"><label><input type="checkbox" data-toggle="waterPurification"> <span>PURIFICATION</span></label><label><input type="checkbox" data-toggle="waterRecycling"> <span>RECYCLING</span></label></div></div>
+              </div>
+              <div class="control-group" data-control="thermal">
+                <div class="control-head"><span class="control-icon thermal-icon"><i data-lucide="thermometer"></i></span><div><b>THERMAL CONTROL</b><small>Heating + cooling loop</small></div><span class="state-pill" id="state-thermal">OFFLINE</span></div>
+                <div class="control-content"><div class="control-stats"><span>CABIN TEMP <b id="thermalTemp">22.0 °C</b></span><span>RADIATOR <b id="radiatorStatus">IDLE</b></span></div><div class="range-row"><label for="tempSlider">SETPOINT <b id="tempSetpoint">22 °C</b></label><input type="range" id="tempSlider" min="18" max="28" value="22"></div><div class="sub-toggle-row"><label><input type="checkbox" data-toggle="heating"> <span>HEATING</span></label><label><input type="checkbox" data-toggle="cooling"> <span>COOLING</span></label></div></div>
+              </div>
+              <div class="control-group" data-control="air">
+                <div class="control-head"><span class="control-icon air-icon"><i data-lucide="filter"></i></span><div><b>AIR FILTRATION</b><small>CO₂ removal + particulate filter</small></div><span class="state-pill" id="state-air">OFFLINE</span></div>
+                <div class="control-content"><div class="control-stats"><span>AIR QUALITY <b id="airQuality">96%</b></span><span>FILTER <b id="filterStatus">IDLE</b></span></div><button class="toggle-btn" data-toggle="air" aria-pressed="false"><span></span> ACTIVATE FILTRATION</button></div>
+              </div>
+            </div>
+            <div class="alerts-panel panel"><div class="panel-heading"><div><p class="eyebrow">DIAGNOSTICS</p><h3>MISSION ALERTS</h3></div><span class="alert-count" id="alertCount">00</span></div><div id="alertList" class="alert-list"><div class="no-alert"><i data-lucide="shield-check"></i> ALL SIMULATED PARAMETERS NOMINAL</div></div></div>
+          </div>
+        </div>
+        <div class="core-disclaimer"><i data-lucide="info"></i> EDUCATIONAL SIMULATION ONLY — values, switches, alarms, and spacecraft visuals are fictional and do not control real hardware or represent flight-certified engineering.</div>
+      </div>
+    </section>
+
+    <section class="section final-section">
+      <div class="final-stars"></div><p class="eyebrow reveal">THE NEXT CHAPTER IS OURS TO WRITE</p>
+      <h2 class="reveal">THE FUTURE OF HUMANITY<br>IS NOT LIMITED TO <span>ONE PLANET.</span></h2>
+      <p class="final-quote reveal">"WE ARE BUILDING A CIVILIZATION AMONG THE STARS."</p>
+      <a href="#cosmic-core" class="btn btn-primary reveal"><span>RETURN TO MISSION CONTROL</span><i data-lucide="arrow-up-right"></i></a>
+      <div class="final-coordinates">CSC / ODYSSEY — END OF TRANSMISSION</div>
+    </section>
+  </main>
+  <footer><a class="brand" href="#home"><span class="brand-mark"><i data-lucide="orbit"></i></span><span><b>CSC</b><small>SPACE CIVILIZATION</small></span></a><p>AN EDUCATIONAL SPACE HABITAT SIMULATION · 2089</p><a href="#home">BACK TO TOP ↑</a></footer>
+
+  <div class="modal-backdrop" id="shutdownModal" role="dialog" aria-modal="true" aria-labelledby="shutdownTitle">
+    <div class="confirm-modal panel"><span class="warning-symbol"><i data-lucide="alert-triangle"></i></span><p class="eyebrow">COMMAND AUTHORIZATION</p><h3 id="shutdownTitle">MASTER SHUTDOWN?</h3><p>This will switch all simulated subsystems offline. Dashboard readings will continue to show the simulated environment.</p><div><button class="small-btn" id="cancelShutdown">CANCEL</button><button class="small-btn danger-btn" id="confirmShutdown">CONFIRM SHUTDOWN</button></div></div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
